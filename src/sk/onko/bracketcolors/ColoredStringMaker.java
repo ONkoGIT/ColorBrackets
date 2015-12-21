@@ -90,7 +90,7 @@ public class ColoredStringMaker {
 
     }
 
-    private static String getBlueString(String input) {
+   public static String getBlueString(String input) {
         return ("<font color=blue>" + input + "</font>");
     }
 }

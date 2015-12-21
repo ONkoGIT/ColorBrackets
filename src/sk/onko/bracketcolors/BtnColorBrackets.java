@@ -29,7 +29,10 @@ public class BtnColorBrackets extends JButton {
 
                 System.out.print(parsedString);
 
-                coloredLabel.setText(ColoredStringMaker.getColoredString(parsedString));
+                BracketScanner bs = new BracketScanner();
+
+                coloredLabel.setText(bs.getHtmlString(parsedString));
+            //    coloredLabel.setText(ColoredStringMaker.getColoredString(parsedString));
             }
         });
 
