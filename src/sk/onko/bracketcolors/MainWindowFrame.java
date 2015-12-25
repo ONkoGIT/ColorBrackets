@@ -16,10 +16,10 @@ public class MainWindowFrame extends JFrame {
     private MainWindowFrame() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+        this.setTitle("Color Brackets");
 
         mainWindowPanel = new MainWindowPanel(WINDOW_WIDTH, WINDOW_HEIGHT);
         this.add(mainWindowPanel);
-
 
         this.setVisible(true);
 

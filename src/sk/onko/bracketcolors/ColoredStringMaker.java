@@ -42,7 +42,6 @@ public class ColoredStringMaker {
         this.leftBrackets = leftBrackets;
         this.rightBrackets = rightBrackets;
 
-
     }
 
 
@@ -50,47 +49,39 @@ public class ColoredStringMaker {
 
     }
 
-    public void doShit() {
-        String[] splitString = inputString.split("\\(|\\)");
 
-        for (String s : splitString) {
-            System.out.print(s);
-            System.out.print("    ");
-
-        }
-
-    }
-
-    public static String getColoredString(String localInputString) {
-        //    String[] splitString = localInputString.split("\\(|\\)");
-
-        List<String> outputStringList = new ArrayList<String>();
-
-        String returnedString = "<html><span style='font-size:20px'>";
-
-        for (int i = 0; i < localInputString.length(); i++) {
-
-            if (localInputString.charAt(i) == '(') {
-
-                returnedString = returnedString + getBlueString(Character.toString(localInputString.charAt(i)));
-
-            } else if (localInputString.charAt(i) == ')') {
-                returnedString = returnedString + getBlueString(Character.toString(localInputString.charAt(i)));
-
-            } else {
-                returnedString = returnedString + Character.toString(localInputString.charAt(i));
-
-            }
-
-        }
-        returnedString = returnedString + "</html>";
-
-        System.out.print(returnedString);
-        return returnedString;
-
-    }
-
-   public static String getBlueString(String input) {
+    public static String getBlueString(String input) {
         return ("<font color=blue>" + input + "</font>");
     }
+
+    public static String getRedString(String input) {
+        return ("<font color=red>" + input + "</font>");
+    }
+
+    public static String getGreenString(String input) {
+        return ("<font color=green>" + input + "</font>");
+    }
+
+    public static String getOrangeString(String input) {
+        return ("<font color=orange>" + input + "</font>");
+    }
+
+
+    public static String getBlueString(String input, int size) {
+        return ("<font color=blue size=" + size + ">" + input + "</font>");
+    }
+
+    public static String getRedString(String input, int size) {
+        return ("<font color=red size=" + size + ">" + input + "</font>");
+    }
+
+    public static String getGreenString(String input, int size) {
+        return ("<font color=green size=" + size + ">" + input + "</font>");
+    }
+
+    public static String getOrangeString(String input, int size) {
+        return ("<font color=orange size=" + size + ">" + input + "</font>");
+    }
+
 }
+
