@@ -64,19 +64,19 @@ public class StringElement {
     public String getS() {
         if (bracketDepth == 1) {
 
-            return ColoredStringMaker.getBlueString(s,100);
+            return ColoredStringMaker.getBlueString(s, 40);
 
         } else if (bracketDepth == 2) {
 
-            return ColoredStringMaker.getRedString(s,100);
+            return ColoredStringMaker.getRedString(s, 40);
 
         } else if (bracketDepth == 3) {
 
-            return ColoredStringMaker.getGreenString(s,100);
+            return ColoredStringMaker.getGreenString(s, 40);
 
         } else if (bracketDepth == 4) {
 
-            return ColoredStringMaker.getOrangeString(s,100);
+            return ColoredStringMaker.getOrangeString(s, 40);
 
         } else
             return s;

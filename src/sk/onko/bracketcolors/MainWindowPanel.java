@@ -17,24 +17,38 @@ public class MainWindowPanel extends JPanel {
 
     MainWindowPanel(int width, int height) {
 
-        this.setLayout(null);
+        // this.setLayout(null);
+        this.setLayout(new GridBagLayout());
 
-        textField1.setBounds(50, 40, (width - 100), (height - 300));
+        //  textField1.setBounds(50, 40, (width - 100), (height - 300));
+        GridBagConstraints c = new GridBagConstraints();
+        c.insets = new Insets(10, 10, 10, 10);
+
         textField1.setFont(appFont);
+        textField1.setPreferredSize(new Dimension(500, 90));
+        c.gridx = 0;
+        c.gridy = 0;
+        this.add(textField1, c);
 
         coloredBrackets = new JLabel("Colored brackets will appear here");
-        coloredBrackets.setBounds(50, (height - 280), (width - 100), (height - 300));
+        // coloredBrackets.setBounds(50, (height - 280), (width - 100), (height - 300));
+        coloredBrackets.setPreferredSize(new Dimension(500, 90));
         coloredBrackets.setFont(appFont);
         this.setVisible(true);
-        this.add(coloredBrackets);
+        c.gridx = 0;
+        c.gridy = 1;
+        this.add(coloredBrackets, c);
 
         btnColorBrackets = new BtnColorBrackets(coloredBrackets, textField1);
-        btnColorBrackets.setBounds(50, (height - 200), (width - 100), (height - 300));
+        btnColorBrackets.setPreferredSize(new Dimension(150, 300));
+        // btnColorBrackets.setBounds(50, (height - 200), (width - 100), (height - 300));
         btnColorBrackets.setFont(appFont);
         btnColorBrackets.setVisible(true);
-        this.add(btnColorBrackets);
+        c.gridheight=2;
+        c.gridx = 1;
+        c.gridy = 0;
+        this.add(btnColorBrackets, c);
 
-        this.add(textField1);
 
         this.setSize(width, height);
 
