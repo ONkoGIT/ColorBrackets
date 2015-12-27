@@ -10,6 +10,14 @@ public class BracketScanner {
 
     private String originalString;
 
+    private BtnCopyToClipboard referenceToBtnCopyToClipboard;
+
+    public BracketScanner(BtnCopyToClipboard referenceToBtnCopyToClipboard) {
+        this.referenceToBtnCopyToClipboard = referenceToBtnCopyToClipboard;
+    }
+
+    public BracketScanner(){}
+
 
     public String getOriginalString() {
         return originalString;
@@ -49,7 +57,7 @@ public class BracketScanner {
 
                     if (isPaired.get(i) == false) {
 
-                        System.out.println("Right bracket at position " + charPosition + "is paired and has ID" + i);
+                        System.out.println("Right bracket at position " + charPosition + " is paired and has ID " + i);
 
                         isPaired.remove(i);
                         isPaired.put(i, true);
@@ -67,10 +75,14 @@ public class BracketScanner {
 
         for (int charPosition = 0; charPosition < originalString.length(); charPosition++) {
 
-            stringToReturn = stringToReturn.concat(htmlStringToken.get(charPosition).getS());
+            stringToReturn = stringToReturn.concat(htmlStringToken.get(charPosition).getS(40));
         }
 
-        return ("<html>" + stringToReturn + "</html>");
+        String resultingString = ("<html>" + stringToReturn + "</html>");
+
+
+
+        return resultingString;
 
     }
 
@@ -91,7 +103,7 @@ public class BracketScanner {
 
                 } else {
 
-                    String oldString = htmlStringToken.get(charPosition).getS();
+                    String oldString = htmlStringToken.get(charPosition).getS(40);
                     String newString = oldString + Character.toString(currentChar);
                     htmlStringToken.put(charPosition, new StringElement(newString));
                 }

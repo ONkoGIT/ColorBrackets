@@ -6,29 +6,14 @@ package sk.onko.bracketcolors;
 public class StringElement {
 
     private String s;
-
-    public int getBracketPosition() {
-        return bracketPosition;
-    }
-
-    public void setBracketPosition(int bracketPosition) {
-        this.bracketPosition = bracketPosition;
-    }
-
     private int bracketPosition;
-
-    public int getBracketDepth() {
-        return bracketDepth;
-    }
-
-    public void setBracketDepth(int bracketDepth) {
-        this.bracketDepth = bracketDepth;
-    }
-
     private int bracketDepth = 0;
-
     private boolean isLeftBracket = false;
     private boolean isRightBracket = false;
+
+    public StringElement(String s) {
+        setS(s);
+    }
 
     public boolean isLeftBracket() {
         return isLeftBracket;
@@ -46,40 +31,51 @@ public class StringElement {
         isRightBracket = rightBracket;
     }
 
-    public StringElement(String s) {
-        this.s = s;
-
-        if (s.charAt(0) == '(') {
-            System.out.println("Left bracket found");
-
-            this.isLeftBracket = true;
-        } else if (s.charAt(0) == ')') {
-            System.out.println("Right bracket found");
-            this.isRightBracket = true;
-        }
-
-
+    public int getBracketPosition() {
+        return bracketPosition;
     }
 
-    public String getS() {
-        if (bracketDepth == 1) {
+    public void setBracketPosition(int bracketPosition) {
+        this.bracketPosition = bracketPosition;
+    }
 
-            return ColoredStringMaker.getBlueString(s, 40);
+    public int getBracketDepth() {
+        return bracketDepth;
+    }
 
-        } else if (bracketDepth == 2) {
+    public void setBracketDepth(int bracketDepth) {
+        this.bracketDepth = bracketDepth;
+    }
 
-            return ColoredStringMaker.getRedString(s, 40);
 
-        } else if (bracketDepth == 3) {
+    public String getS(int textSize) {
 
-            return ColoredStringMaker.getGreenString(s, 40);
+        switch (bracketDepth) {
+            case 1:
+                return ColoredStringMaker.getBlueString(s, textSize);
+            case 2:
+                return ColoredStringMaker.getRedString(s, textSize);
+            case 3:
+                return ColoredStringMaker.getGreenString(s, textSize);
+            case 4:
+                return ColoredStringMaker.getOrangeString(s, textSize);
+            case 5:
+                return ColoredStringMaker.getCyanString(s, textSize);
+            case 6:
+                return ColoredStringMaker.getFuchsiaString(s, textSize);
+            case 7:
+                return ColoredStringMaker.getYellowGreenString(s, textSize);
+            case 8:
+                return ColoredStringMaker.getGoldString(s, textSize);
+            case 9:
+                return ColoredStringMaker.getDarkMagentaString(s, textSize);
+            case 10:
+                return ColoredStringMaker.getChocolateString(s, textSize);
+            default:
+                return s;
 
-        } else if (bracketDepth == 4) {
+        }
 
-            return ColoredStringMaker.getOrangeString(s, 40);
-
-        } else
-            return s;
     }
 
     public void setS(String s) {

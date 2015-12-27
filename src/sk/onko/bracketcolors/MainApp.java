@@ -1,7 +1,7 @@
 package sk.onko.bracketcolors;
 
 /**
- * Created by ondrej.janosik on 21/12/2015.
+ * Created by Ondrej on 21/12/2015.
  */
 public class MainApp {
 

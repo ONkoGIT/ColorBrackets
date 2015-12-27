@@ -1,21 +1,21 @@
 package sk.onko.bracketcolors;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Created by ondrej.janosik on 21/12/2015.
+ * Created by Ondrej on 21/12/2015.
  */
 public class BtnColorBrackets extends JButton {
 
+
     private String parsedString = "";
 
-    public BtnColorBrackets(JLabel coloredLabel, JTextField textField1) {
+    public BtnColorBrackets(JLabel coloredLabel, JTextArea textField1) {
         this.setSize(100, 50);
         this.setText("<html>  &nbsp;&nbsp;Color<br />brackets </html>");
-       // this.setBackground(new Color(255,255,255));
+        // this.setBackground(new Color(255,255,255));
 
         this.addActionListener(new ActionListener() {
             @Override
@@ -27,7 +27,9 @@ public class BtnColorBrackets extends JButton {
 
                 BracketScanner bs = new BracketScanner();
 
-                coloredLabel.setText(bs.getHtmlString(parsedString));
+                String outputStringFromScanner = bs.getHtmlString(parsedString);
+
+                coloredLabel.setText(outputStringFromScanner);
 
             }
         });
